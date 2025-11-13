@@ -10,8 +10,8 @@ const titleSection = (position, time) => {
     }
 return `
     <section class="container_phone-title">
-        <div class="container_phone-city">${position.location},<br> ${position.country}</div>
-        <div class="container_phone-time">${time.day}, ${time.month} ${time.date}</div>
+        <div class="container_phone-city ">${position.location},<br> ${position.country}</div>
+        <div class="container_phone-time ">${time.day}, ${time.month} ${time.date}</div>
     </section>
 `
 }

@@ -174,4 +174,19 @@ const findLocationInteractive = () => {
     })
 }
 
-export {timeInteractive, searchInteractive, findLocationInteractive, renderInfo, getdata, resolveData}
+const switchTheme = () => {
+    const theme = document.querySelector("body");
+    const switchBtn = document.querySelector(".switch-mode");
+    switchBtn.addEventListener("click", e => {
+        if(!theme.classList.contains("dark")){
+            switchBtn.textContent = "🌜";
+            theme.classList.toggle("dark");
+        }
+        else{
+            switchBtn.textContent = "🌞";
+            theme.classList.toggle("dark");
+        }
+    })
+}
+
+export {timeInteractive, searchInteractive, findLocationInteractive, renderInfo, getdata, resolveData, switchTheme}

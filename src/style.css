@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
+:root {
+  --text: hsl(18, 100%, 2%);
+  --background: hsl(12, 100%, 98%);
+  --primary: hsl(15, 82%, 68%);
+  --secondary: hsl(57, 94%, 72%);
+  --accent: hsl(69, 94%, 62%);
+}
+.dark {
+  --text: hsl(18, 100%, 98%);
+  --background: hsl(220, 18%, 23%);
+  --primary: hsl(15, 94%, 49%);
+  --secondary: hsl(57, 94%, 28%);
+  --accent: hsl(69, 94%, 38%);
+}
 
 *, *::before, *::after{
     margin: 0;
@@ -13,6 +26,7 @@ body{
     min-height: 100vh;
     font-family: Inter;
     font-weight: 500;
+    background-color: var(--background);
 }
 
 .container{
@@ -39,21 +53,21 @@ header{
         border-radius: 20px;
         padding-left: 12px;
         font-weight: 200;
-        border: 0.5px solid black;
+        border: 0.5px solid var(--text);
         outline: none;
-        &:focus{
-            transition: border ease-in-out 2s;
-            border: 2px solid rgba(0, 0, 0, 0.508);
-        } 
         &:focus-visible{
             outline: none;
         }
     }
 
+    & .search_icon{
+        color: var(--text);
+    }
+
 }
 
 .error_location{
-    color: rgba(255, 0, 0, 0.76);
+    color: var(--primary);
     display: none;
 }
 .container_phone{
@@ -62,10 +76,9 @@ header{
     width: 420px;
     height: 800px;
     margin: 0 auto;
-    border: 6px solid #000000a0;
+    border: 6px solid var(--accent);
     border-radius: 24px;
-    background-color: rgba(255, 255, 255, 0.29);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 14px;
+    background-color: var(--background);
     padding: 0 24px;
     display: flex;
     flex-direction: column;
@@ -84,9 +97,10 @@ header{
     font-size: 2.5rem;
     line-height: auto;
     margin-bottom: 6px;
+    color: var(--text);
 }
 .container_phone-time{
-    color: #9A938C;
+    color: var(--text);
     line-height: auto;
 }
 .container_phone-forecast{
@@ -111,7 +125,7 @@ header{
 } */
 
 .container_phone-condition{
-    color: #303345;
+    color: var(--text);
     display: flex;
     justify-content: end;
 
@@ -144,18 +158,18 @@ header{
 .container_phone-detail li{
     padding: 20px 22px;
     border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.36);
-    box-shadow: 4px 5px 6px -4px rgba(0, 0, 0, 0.296);
+    background-color: var(--accent);
+    box-shadow: 4px 4px 0px 2px var(--text);
+    color: var(--text);
 
     & span:first-child{
-        background-color: #fff;
         padding: 6px;
         border-radius: 10px;
         width: 28px;
         height: 28px;
         display: inline-flex;
         justify-content: center;
-        box-shadow: 4px 5px 6px -4px rgba(0, 0, 0, 0.56);
+        align-items: center;
     }
 
     & span:nth-child(2){
@@ -186,19 +200,36 @@ footer ul{
     width: 100%;
     justify-content: space-around;
     gap: 24px;
+    align-items: center;
 }
 
 .container_phone-day{
-    color: #9A938C;
-
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: content ease-in 1s;
     &:hover{
         cursor: pointer;
+    }
+    & a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: var(--text);
+        transition: font-size ease-in 0.1s;
+        &:hover{
+            font-size: 2rem;
+        }
+    }
+    &:last-child{
+        transition: transform ease-out 0.25s;
+        &:hover{
+            transform: rotate(360deg);
+        }
     }
 }
 
 
 .hightlight_date{
-    color: #000;
+    color: var(--text);
 }
 
 /* Loading screen */

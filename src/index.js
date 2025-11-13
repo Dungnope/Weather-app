@@ -1,6 +1,7 @@
 import "./style.css";
-import { timeInteractive, searchInteractive, findLocationInteractive} from "./interactive.js";
+import { timeInteractive, searchInteractive, findLocationInteractive, switchTheme} from "./interactive.js";
 
 timeInteractive();
 searchInteractive();
 findLocationInteractive();
+switchTheme();
